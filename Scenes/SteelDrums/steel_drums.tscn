@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1qobu5bq5lyv"]
+
+[ext_resource type="Texture2D" uid="uid://bsaxajn8hbi3v" path="res://Assets/SteelDurms.png" id="1_kbse6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vet7"]
+size = Vector2(72, 64)
+
+[node name="SteelDrums" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_kbse6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 9)
+shape = SubResource("RectangleShape2D_5vet7")

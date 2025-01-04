@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://npih87pgml26"]
+
+[ext_resource type="Script" path="res://Scenes/GameOver/game_over.gd" id="1_5odpk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fshvn"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_5jtu8"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_ufe5x"]
+font_size = 50
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5odpk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.282353, 0.352941, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -614.0
+offset_top = -337.0
+offset_right = 614.0
+offset_bottom = 337.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Game Over" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game over
+"
+label_settings = SubResource("LabelSettings_fshvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalScore" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Score:"
+label_settings = SubResource("LabelSettings_5jtu8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "High score:"
+label_settings = SubResource("LabelSettings_ufe5x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 307
+alignment = 1
+
+[node name="Retry" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "Retry"
+flat = true
+
+[node name="RetryTouch" type="TouchScreenButton" parent="PanelContainer/VBoxContainer/HBoxContainer/Retry"]
+scale = Vector2(1.14063, 0.648438)
+visibility_mode = 1
+
+[node name="Home" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Home"
+flat = true
+
+[node name="HomeTouch" type="TouchScreenButton" parent="PanelContainer/VBoxContainer/HBoxContainer/Home"]
+visibility_mode = 1
+
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+flat = true
+
+[node name="ExitTouch" type="TouchScreenButton" parent="PanelContainer/VBoxContainer/HBoxContainer/Exit"]
+visibility_mode = 1
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Retry/RetryTouch" to="." method="_on_retry_touch_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Home/HomeTouch" to="." method="_on_home_touch_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Exit/ExitTouch" to="." method="_on_exit_touch_pressed"]

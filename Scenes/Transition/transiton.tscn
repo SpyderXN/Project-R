@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg2eqe88ec03g"]
+
+[ext_resource type="Script" path="res://Scenes/Transition/transiton.gd" id="1_8kvf8"]
+
+[sub_resource type="Animation" id="Animation_3y0h8"]
+resource_name = "close"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1144), Vector2(0, -856), Vector2(0, -608), Vector2(0, -536)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1112), Vector2(0, 912), Vector2(0, 776), Vector2(0, 520)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_thmla"]
+_data = {
+"close": SubResource("Animation_3y0h8")
+}
+
+[node name="Transiton" type="CanvasLayer"]
+script = ExtResource("1_8kvf8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1144.0
+offset_bottom = -1144.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0253638, 0.0253638, 0.0253638, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1112.0
+offset_bottom = 1112.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0253638, 0.0253638, 0.0253638, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_thmla")
+}
