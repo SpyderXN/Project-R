@@ -16,7 +16,7 @@ var pressed = false
 func _physics_process(_delta):
 	if is_on_floor():
 		COYOTE_COUNTER = COYOTE_TIME
-		$AnimationPlayer.play("slime_run")
+		$AnimationPlayer.play("slime_run_2")
 	
 	# Add the gravity.
 	if not is_on_floor():

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4joveunlygn6"
-path="res://.godot/imported/Drum2.png-20a392760fccbca18ec41c234ea0fddf.ctex"
+path="res://.godot/imported/Drum2.png-10d07fc7f46c5d594cda903101e8e396.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Drum2.png"
-dest_files=["res://.godot/imported/Drum2.png-20a392760fccbca18ec41c234ea0fddf.ctex"]
+source_file="res://Assets/Objects/Drum2.png"
+dest_files=["res://.godot/imported/Drum2.png-10d07fc7f46c5d594cda903101e8e396.ctex"]
 
 [params]
 

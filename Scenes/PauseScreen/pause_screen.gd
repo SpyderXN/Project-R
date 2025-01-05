@@ -24,11 +24,6 @@ func _on_resume_pressed():
 	resume()
 
 
-func _on_restart_pressed():
-	resume()
-	Transiton.change_scene("res://Scenes/GameScene/game_scene.tscn")
-
-
 func _on_home_pressed():
 	resume()
 	Transiton.change_scene("res://Scenes/HomeScreen/home_screen.tscn")

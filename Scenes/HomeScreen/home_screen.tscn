@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7noanc3qxn8j"]
+[gd_scene load_steps=6 format=3 uid="uid://b7noanc3qxn8j"]
 
 [ext_resource type="Script" path="res://Scenes/HomeScreen/HomeScreen.gd" id="1_d5ksx"]
 [ext_resource type="Texture2D" uid="uid://xueneqmufriq" path="res://icon.svg" id="2_2titl"]
-[ext_resource type="Texture2D" uid="uid://eshg8313jmlt" path="res://Assets/LogoSlime.png" id="2_ukhs6"]
+[ext_resource type="Texture2D" uid="uid://eshg8313jmlt" path="res://Assets/Logo/LogoSlime.png" id="2_ukhs6"]
+[ext_resource type="Texture2D" uid="uid://dhx8obltrw1k3" path="res://Assets/UI/PlayButton.png" id="3_55rkw"]
+[ext_resource type="Texture2D" uid="uid://sfh0qfrw8se6" path="res://Assets/UI/ExitButton.png" id="4_jxllr"]
 
 [node name="HomeScreen" type="Node2D"]
 script = ExtResource("1_d5ksx")
@@ -15,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.074802, 0.340817, 0.280661, 1)
+color = Color(0.0187959, 0.155376, 0.123438, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="UI"]
 texture_filter = 1
@@ -25,20 +27,30 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_ukhs6")
 
 [node name="Play" type="Button" parent="UI"]
+texture_filter = 1
+texture_repeat = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -285.0
+offset_left = -295.0
 offset_top = 43.0
-offset_right = 283.0
-offset_bottom = 139.0
+offset_right = 295.0
+offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
-text = "Play"
 flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Play"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(296, 73)
+scale = Vector2(3, 3)
+texture = ExtResource("3_55rkw")
 
 [node name="Exit" type="Button" parent="UI"]
 anchors_preset = 8
@@ -47,25 +59,29 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -285.0
-offset_top = 179.0
+offset_top = 251.0
 offset_right = 283.0
-offset_bottom = 275.0
+offset_bottom = 347.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
-text = "Exit"
 flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Exit"]
+position = Vector2(269, 44)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jxllr")
 
 [node name="Start" type="TouchScreenButton" parent="UI"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(677, 568)
+position = Vector2(677, 592)
 scale = Vector2(4.53125, 1)
 texture_normal = ExtResource("2_2titl")
 visibility_mode = 1
 
 [node name="Quit" type="TouchScreenButton" parent="UI"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(671, 697)
+position = Vector2(671, 777)
 scale = Vector2(4.69531, 1)
 texture_normal = ExtResource("2_2titl")
 

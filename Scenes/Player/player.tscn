@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://brmp2urmsefwr"]
+[gd_scene load_steps=14 format=3 uid="uid://brmp2urmsefwr"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_acox2"]
-[ext_resource type="Texture2D" uid="uid://cnhhkc0s47ff2" path="res://Assets/SlimeJumpAnim.png" id="2_ffa3v"]
+[ext_resource type="Texture2D" uid="uid://b5fjwfpubklt1" path="res://Assets/Slime2Run/Slime2run.png" id="2_qh2kd"]
 [ext_resource type="Texture2D" uid="uid://cteoq1xytt74v" path="res://Assets/Slime_run_spritesheet.png" id="3_q7yrf"]
 [ext_resource type="Texture2D" uid="uid://deid7hfd2lub0" path="res://Assets/SlimeRunSpriteSheet.png" id="3_t8qrw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3vcn"]
-size = Vector2(67, 38)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1l5yc"]
+radius = 19.0
+height = 66.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w6jy4"]
 radius = 16.0
-height = 90.0
+height = 104.0
 
 [sub_resource type="Animation" id="Animation_frn1v"]
 length = 0.001
@@ -24,7 +25,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_ffa3v")]
+"values": [ExtResource("2_qh2kd")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -36,7 +37,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [9]
+"values": [5]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -60,7 +61,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [4]
 }
 
 [sub_resource type="Animation" id="Animation_oof8w"]
@@ -124,7 +125,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_3w1cp"]
 resource_name = "slime_run"
-length = 0.3
+length = 0.1
 loop_mode = 1
 step = 0.02
 tracks/0/type = "value"
@@ -170,10 +171,51 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.12, 0.24),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_73y81"]
+resource_name = "slime_run_2"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_qh2kd")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.29, 0.46),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_salte"]
@@ -182,7 +224,8 @@ _data = {
 "jump": SubResource("Animation_oof8w"),
 "run": SubResource("Animation_wbyes"),
 "slime_jump": SubResource("Animation_0a26g"),
-"slime_run": SubResource("Animation_3w1cp")
+"slime_run": SubResource("Animation_3w1cp"),
+"slime_run_2": SubResource("Animation_73y81")
 }
 
 [node name="Player" type="CharacterBody2D"]
@@ -191,16 +234,17 @@ script = ExtResource("1_acox2")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-scale = Vector2(2, 2)
-texture = ExtResource("2_ffa3v")
-hframes = 9
+texture = ExtResource("2_qh2kd")
+hframes = 5
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 15)
-shape = SubResource("RectangleShape2D_d3vcn")
+position = Vector2(-14, 14)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1l5yc")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 48)
+position = Vector2(-6, 39)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_w6jy4")
 
