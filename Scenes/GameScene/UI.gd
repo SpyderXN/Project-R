@@ -38,4 +38,3 @@ func _process(_delta):
 
 func update_score():
 	score_board.text = "Score: " + str(Globals.score)
-

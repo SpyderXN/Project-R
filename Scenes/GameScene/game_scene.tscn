@@ -1,43 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://2itx7koy1rm4"]
+[gd_scene load_steps=5 format=3 uid="uid://2itx7koy1rm4"]
 
 [ext_resource type="PackedScene" uid="uid://djokgq5xnc7gq" path="res://Scenes/Ground/ground.tscn" id="1_k2wpc"]
 [ext_resource type="PackedScene" uid="uid://brmp2urmsefwr" path="res://Scenes/Player/player.tscn" id="2_2n8oi"]
 [ext_resource type="PackedScene" uid="uid://byj242j1ahnh8" path="res://Scenes/PlatformSpawner/platform_spawner.tscn" id="3_nuvej"]
 [ext_resource type="PackedScene" uid="uid://13qucv4vmdhq" path="res://Scenes/UI/ui.tscn" id="4_ichxu"]
-[ext_resource type="Texture2D" uid="uid://sh0p288jxn2" path="res://Assets/moon.png" id="5_pg272"]
 
 [node name="GameScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_2n8oi")]
 position = Vector2(418, -237)
-scale = Vector2(0.5, 0.5)
 GRAVITY = 55
 JUMP_FORCE = 1500
 JUMP_BUFFER_TIME = 15
 COYOTE_TIME = 15
 
 [node name="PlatformSpawner" parent="." instance=ExtResource("3_nuvej")]
-position = Vector2(2696, 0)
+position = Vector2(2928, 0)
 
 [node name="StartGround" type="Node2D" parent="."]
 
 [node name="Ground" parent="StartGround" instance=ExtResource("1_k2wpc")]
-position = Vector2(1137, 545)
+position = Vector2(553, 545)
 
 [node name="Ground3" parent="StartGround" instance=ExtResource("1_k2wpc")]
-position = Vector2(1953, 625)
-
-[node name="Ground2" parent="StartGround" instance=ExtResource("1_k2wpc")]
-position = Vector2(337, 593)
+position = Vector2(1777, 658)
 
 [node name="UI" parent="." instance=ExtResource("4_ichxu")]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-10, -156)
-scale = Vector2(1.27969, 1.18889)
-texture = ExtResource("5_pg272")
-centered = false
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

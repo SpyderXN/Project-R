@@ -34,10 +34,10 @@ func spawn_object():
 	if drums:
 		var spawn = drums.instantiate() as StaticBody2D
 		$Collection.add_child(spawn)
-		spawn.position = Vector2(randf_range(70, 256), -126)
+		spawn.position = Vector2(randf_range(70, 270), -138)
 
 func spawn_oil():
 	if oil_drums:
 		var spawn_oil_drum = oil_drums.instantiate() as StaticBody2D
 		$OilDrums.add_child(spawn_oil_drum)
-		spawn_oil_drum.position = Vector2(randf_range(-100, -259), -126)
+		spawn_oil_drum.position = Vector2(randf_range(-350, -240), -138)

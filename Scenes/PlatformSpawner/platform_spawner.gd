@@ -28,8 +28,8 @@ func _on_timer_timeout():
 func adjust_spawn_rate():
 	# Example: Timer decreases as speed increases
 	# Assuming 'Globals.speed' holds the current speed
-	var base_speed = 350  # Starting speed
-	var base_wait_time = 2.7  # Starting spawn rate
+	var base_speed = 450  # Starting speed
+	var base_wait_time = 3.5  # Starting spawn rate
 	
 	# Dynamically adjust wait time based on speed
 	timer.wait_time = max(0.5, base_wait_time - (Globals.speed - base_speed) * 0.001)

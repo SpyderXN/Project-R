@@ -22,7 +22,7 @@ color = Color(0.0187959, 0.155376, 0.123438, 1)
 [node name="Sprite2D" type="Sprite2D" parent="UI"]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(963, 295)
+position = Vector2(963, 319)
 scale = Vector2(5, 5)
 texture = ExtResource("2_ukhs6")
 
@@ -35,9 +35,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -295.0
-offset_top = 43.0
+offset_top = 107.0
 offset_right = 295.0
-offset_bottom = 188.0
+offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
@@ -59,9 +59,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -285.0
-offset_top = 251.0
+offset_top = 315.0
 offset_right = 283.0
-offset_bottom = 347.0
+offset_bottom = 411.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
@@ -74,14 +74,14 @@ texture = ExtResource("4_jxllr")
 
 [node name="Start" type="TouchScreenButton" parent="UI"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(677, 592)
+position = Vector2(677, 656)
 scale = Vector2(4.53125, 1)
 texture_normal = ExtResource("2_2titl")
 visibility_mode = 1
 
 [node name="Quit" type="TouchScreenButton" parent="UI"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(671, 777)
+position = Vector2(671, 841)
 scale = Vector2(4.69531, 1)
 texture_normal = ExtResource("2_2titl")
 
